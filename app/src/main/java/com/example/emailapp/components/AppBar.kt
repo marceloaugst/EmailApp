@@ -29,7 +29,7 @@ import com.example.emailapp.data.Email
 import com.example.emailapp.data.LocalEmailDataProvider
 
 @Composable
-fun SearchBar(modifier: Modifier) {
+fun SearchBar(modifier: Modifier = Modifier) {
     Row(
         modifier = modifier
             .fillMaxWidth()

@@ -1,5 +1,6 @@
-package com.example.emailapp.data
+package com.example.emailapp.components
 
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -19,19 +20,21 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.emailapp.R
-import com.example.emailapp.components.ProfileImage
+import com.example.emailapp.data.Email
+import com.example.emailapp.data.LocalEmailDataProvider
 
 @Composable
-fun ItemEmail(email: Email, modifier: Modifier, navigationToDetail: (Long) -> Unit) {
+fun ItemEmail(email: Email, modifier: Modifier = Modifier, navigationToDetail: (Long) -> Unit) {
 
     Card(modifier = Modifier.padding(16.dp, vertical = 4.dp)) {
         Column(
-            modifier = Modifier
+            modifier = modifier
                 .padding(20.dp)
                 .fillMaxWidth()
+                .clickable { navigationToDetail(email.id) }
         ) {
             Row(
-                modifier = Modifier
+                modifier = modifier
                     .fillMaxWidth()
             ) {
                 ProfileImage(
@@ -40,7 +43,7 @@ fun ItemEmail(email: Email, modifier: Modifier, navigationToDetail: (Long) -> Un
                 )
 
                 Column(
-                    modifier = Modifier
+                    modifier = modifier
                         .weight(1f)
                         .padding(horizontal = 12.dp, vertical = 4.dp)
                 ) {
@@ -57,7 +60,7 @@ fun ItemEmail(email: Email, modifier: Modifier, navigationToDetail: (Long) -> Un
                     )
                 }
             }
-            Text(text = email.subject, modifier = Modifier.padding(top = 12.dp, bottom = 8.dp))
+            Text(text = email.subject, modifier = modifier.padding(top = 12.dp, bottom = 8.dp))
             Text(text = email.body, maxLines = 2, overflow = TextOverflow.Ellipsis)
         }
     }
