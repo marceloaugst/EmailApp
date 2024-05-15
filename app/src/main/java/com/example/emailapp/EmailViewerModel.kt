@@ -12,7 +12,7 @@ class EmailViewerModel : ViewModel(), EmailUIAction {
     val uiState = _uiState.asStateFlow()
 
     init {
-
+        initEmails()
     }
 
     private fun initEmails() {

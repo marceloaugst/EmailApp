@@ -19,7 +19,7 @@ fun ListEmail(
     emailLazyListState: LazyListState
 ) {
 
-    LazyColumn(modifier = modifier, state = emailLazyListState) {
+    LazyColumn(modifier = Modifier, state = emailLazyListState) {
         item {
             SearchBar()
         }

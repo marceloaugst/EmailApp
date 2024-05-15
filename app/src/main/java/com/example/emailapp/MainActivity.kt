@@ -13,17 +13,19 @@ import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import com.example.emailapp.components.EmailApp
 import com.example.emailapp.ui.theme.EmailAppTheme
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         val viewerModel by viewModels<EmailViewerModel>()
+
         setContent {
             val uiState by viewerModel.uiState.collectAsState()
 
             EmailAppTheme {
-
+                EmailApp(uiState = uiState, uiAction = viewerModel)
             }
         }
     }

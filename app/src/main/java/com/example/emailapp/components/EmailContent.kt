@@ -1,5 +1,6 @@
 package com.example.emailapp.components
 
+import androidx.activity.compose.BackHandler
 import androidx.compose.foundation.lazy.LazyListState
 import androidx.compose.foundation.lazy.rememberLazyListState
 import androidx.compose.runtime.Composable
@@ -18,7 +19,10 @@ fun EmailContent(
 ) {
 
     if(uiState.selectedEmail != null && uiState.isDetailOnlyOpen){
-        // Deve ter algo aqui..
+        BackHandler {
+            uiAction.back()
+        }
+        EmailDetail(email = uiState.selectedEmail, uiAction = uiAction)
     } else {
         ListEmail(uiState = uiState, uiAction = uiAction, emailLazyListState = emailLazyListState)
     }
@@ -30,7 +34,6 @@ fun EmailContent(
 fun EmailContentPreview() {
 
     EmailContent(
-        modifier = Modifier,
         uiState = EmailUIState(emails = LocalEmailDataProvider.allEmail),
         uiAction = object : EmailUIAction {
             override fun navigationToDetail(emailId: Long) {

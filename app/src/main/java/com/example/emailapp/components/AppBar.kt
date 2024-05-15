@@ -1,6 +1,5 @@
 package com.example.emailapp.components
 
-import androidx.activity.OnBackPressedCallback
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
@@ -31,7 +30,7 @@ import com.example.emailapp.data.LocalEmailDataProvider
 @Composable
 fun SearchBar(modifier: Modifier = Modifier) {
     Row(
-        modifier = modifier
+        modifier = Modifier
             .fillMaxWidth()
             .padding(16.dp),
         verticalAlignment = Alignment.CenterVertically
@@ -66,7 +65,7 @@ fun SearchBarPreview() {
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun EmailDetailAppBar(modifier: Modifier, email: Email, onBackPressed: () -> Unit) {
+fun EmailDetailAppBar(modifier: Modifier = Modifier, email: Email, onBackPressed: () -> Unit) {
     TopAppBar(title = {
         Text(
             text = email.subject,

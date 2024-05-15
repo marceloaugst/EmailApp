@@ -5,4 +5,13 @@
     <string name="back">Voltar</string>
     <string name="more">Mais</string>
     <string name="favorite">Favorito</string>
+    <string name="edit">Escrever</string>
+    <string name="tab_inbox">tab_inbox</string>
+    <string name="tab_favorite">tab_favorite\n</string>
+    <string name="tab_settings">tab_settings</string>
+    <string name="tab_profile">tab_profile</string>
+    <string name="funcionalidade_construcao">Funcionalidade em construcao</string>
+    <string name="essa_funcionalidade_ainda_esta_em_construcao">Essa Funcionalidade ainda esta em construcao</string>
+    <string name="reply">Responder</string>
+    <string name="reply_all">Responder todos</string>
 </resources>

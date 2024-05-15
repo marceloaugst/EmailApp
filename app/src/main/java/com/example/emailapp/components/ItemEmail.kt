@@ -28,13 +28,13 @@ fun ItemEmail(email: Email, modifier: Modifier = Modifier, navigationToDetail: (
 
     Card(modifier = Modifier.padding(16.dp, vertical = 4.dp)) {
         Column(
-            modifier = modifier
+            modifier = Modifier
                 .padding(20.dp)
                 .fillMaxWidth()
                 .clickable { navigationToDetail(email.id) }
         ) {
             Row(
-                modifier = modifier
+                modifier = Modifier
                     .fillMaxWidth()
             ) {
                 ProfileImage(
@@ -43,7 +43,7 @@ fun ItemEmail(email: Email, modifier: Modifier = Modifier, navigationToDetail: (
                 )
 
                 Column(
-                    modifier = modifier
+                    modifier = Modifier
                         .weight(1f)
                         .padding(horizontal = 12.dp, vertical = 4.dp)
                 ) {
@@ -60,7 +60,7 @@ fun ItemEmail(email: Email, modifier: Modifier = Modifier, navigationToDetail: (
                     )
                 }
             }
-            Text(text = email.subject, modifier = modifier.padding(top = 12.dp, bottom = 8.dp))
+            Text(text = email.subject, modifier = Modifier.padding(top = 12.dp, bottom = 8.dp))
             Text(text = email.body, maxLines = 2, overflow = TextOverflow.Ellipsis)
         }
     }

@@ -18,7 +18,7 @@ fun ProfileImage(drawableResource: Int, descriptor: String, modifier: Modifier =
     Image(
         painter = painterResource(id = drawableResource),
         contentDescription = descriptor,
-        modifier = modifier
+        modifier = Modifier
             .size(40.dp)
             .clip(CircleShape)
     )
